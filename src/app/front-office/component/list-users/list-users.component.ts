@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
+import { ActivatedRoute } from '@angular/router';
+import { UserInfosService } from 'src/app/user-infos.service';
 
 @Component({
   selector: 'app-list-users',
@@ -7,12 +9,12 @@ import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/dr
   styleUrls: ['./list-users.component.scss'],
 })
 export class ListUsersComponent {
-  user = [
-    'Get to work',
-    'Pick up groceries',
-    'Go home',
-    'Fall asleep'
-  ];
+  
+
+  
+  user: any = {};
+
+  constructor(private route: ActivatedRoute, private userInfosService: UserInfosService) { }
 
   drop(event: CdkDragDrop<string[]>) {
     if (event.previousContainer === event.container) {
@@ -23,5 +25,16 @@ export class ListUsersComponent {
           event.previousIndex,
           event.currentIndex);
     }
+  }
+
+  ngOnInit() {
+    this.route.params.subscribe(params => {
+      this.userInfosService
+        .getUserInfos()
+        .subscribe((data) => {
+          console.log(data);
+          this.user = data;
+      });
+    });
   }
 }

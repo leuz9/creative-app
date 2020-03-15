@@ -15,6 +15,9 @@ import { MatListModule } from '@angular/material/list';
 import { NotFoundComponent } from './shared/component/not-found/not-found.component';
 import { ListUsersComponent } from './front-office/component/list-users/list-users.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { HttpClientModule } from '@angular/common/http';
+import {MatCardModule} from '@angular/material/card';
+import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
 
 @NgModule({
   declarations: [
@@ -28,13 +31,18 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    DragDropModule
+    DragDropModule,
+    MatCardModule,
+    NgxUiLoaderModule,
+    NgxUiLoaderRouterModule,
+    NgxUiLoaderHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]
