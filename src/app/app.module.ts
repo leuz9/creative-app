@@ -18,6 +18,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 import { HttpClientModule } from '@angular/common/http';
 import {MatCardModule} from '@angular/material/card';
 import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } from 'ngx-ui-loader';
+import { ListUsersWithImageComponent } from './front-office/component/list-users-with-image/list-users-with-image.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { NgxUiLoaderModule, NgxUiLoaderRouterModule, NgxUiLoaderHttpModule } fro
     HeaderComponent,
     WelcomeComponent,
     NotFoundComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    ListUsersWithImageComponent
   ],
   imports: [
     BrowserModule,

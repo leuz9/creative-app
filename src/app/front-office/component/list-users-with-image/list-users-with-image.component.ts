@@ -1,18 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 import { ActivatedRoute } from '@angular/router';
 import { UserInfosService } from 'src/app/user-infos.service';
 
 @Component({
-  selector: 'app-list-users',
-  templateUrl: './list-users.component.html',
-  styleUrls: ['./list-users.component.scss'],
+  selector: 'app-list-users-with-image',
+  templateUrl: './list-users-with-image.component.html',
+  styleUrls: ['./list-users-with-image.component.scss']
 })
-export class ListUsersComponent {
-  
+export class ListUsersWithImageComponent implements OnInit {
 
-  
   user: any = {};
+  userImage: any = {};
 
   constructor(private route: ActivatedRoute, private userInfosService: UserInfosService) { }
 
@@ -30,6 +29,15 @@ export class ListUsersComponent {
   
 
   ngOnInit() {
+    this.route.params.subscribe(() => {
+      this.userInfosService
+        .getUserImage()
+        .subscribe((data) => {
+          console.log(data);
+          this.userImage = data;
+      });
+    });
+
     this.route.params.subscribe(() => {
       this.userInfosService
         .getUserInfos()
