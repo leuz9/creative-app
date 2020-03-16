@@ -3,5 +3,6 @@
   "selectedLanguage": "en",
   "user_list_simple": "user list simple",
   "user_list_with_image": "user list with image",
-  "welcome_message": "Welcome to the wonderful world of front-end development."
+  "welcome_message": "Welcome to the wonderful world of front-end development.",
+  "page_not_found": "page not found"
 }

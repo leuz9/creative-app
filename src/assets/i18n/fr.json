@@ -3,5 +3,6 @@
   "selectedLanguage": "fr",
   "user_list_simple": "liste simple",
   "user_list_with_image": "liste avec image",
-  "welcome_message": "Bienvenue dans le merveilleux monde du developpement front-end."
+  "welcome_message": "Bienvenue dans le merveilleux monde du developpement front-end.",
+  "page_not_found": "page non trouvé"
 }
