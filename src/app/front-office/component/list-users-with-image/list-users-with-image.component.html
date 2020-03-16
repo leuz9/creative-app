@@ -10,7 +10,7 @@
     >
       <div class="list-item" *ngFor="let info of user ; let i= index" cdkDrag>
         <ng-container *ngFor="let photo of userImage">
-          <mat-card class="user-card" *ngIf="(i+1) === photo.id ">
+          <mat-card class="user-card" *ngIf=" (i+1) === photo.id ">
             <mat-card-header>
               <mat-card-title>{{ info.name }}</mat-card-title>
               <mat-card-subtitle>{{ info.name }}</mat-card-subtitle>

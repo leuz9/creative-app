@@ -7,7 +7,8 @@ import { ListUsersWithImageComponent } from './front-office/component/list-users
 
 
 const routes: Routes = [
-  { path: 'welcome', component: WelcomeComponent, },
+  { path: '', component: WelcomeComponent },
+  { path: 'welcome', component: WelcomeComponent },
   { path: 'user-list', component: ListUsersComponent, },
   { path: 'user-list-with-image', component: ListUsersWithImageComponent, },
   { path: '**', component: NotFoundComponent }
