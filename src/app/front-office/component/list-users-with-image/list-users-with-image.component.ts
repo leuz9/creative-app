@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from "@angular/core";
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem
-} from '@angular/cdk/drag-drop';
-import { ActivatedRoute } from '@angular/router';
-import { UserInfosService } from 'src/app/user-infos.service';
+} from "@angular/cdk/drag-drop";
+import { ActivatedRoute } from "@angular/router";
+import { UserInfosService } from "src/app/user-infos.service";
+import { SubSink } from "subsink";
 
 @Component({
-  selector: 'app-list-users-with-image',
-  templateUrl: './list-users-with-image.component.html',
-  styleUrls: ['./list-users-with-image.component.scss']
+  selector: "app-list-users-with-image",
+  templateUrl: "./list-users-with-image.component.html",
+  styleUrls: ["./list-users-with-image.component.scss"]
 })
-export class ListUsersWithImageComponent implements OnInit {
-  user: any = {};
-  userImage: any = {};
+export class ListUsersWithImageComponent implements OnInit, OnDestroy {
+  users: any = [];
+  userImages: any = [];
+
+  private subs = new SubSink();
 
   constructor(
     private route: ActivatedRoute,
@@ -39,20 +42,18 @@ export class ListUsersWithImageComponent implements OnInit {
   }
 
   onGetUserImage() {
-    this.route.params.subscribe(() => {
-      this.userInfosService.getUserImage().subscribe(data => {
-        console.log(data);
-        this.userImage = data;
-      });
+    this.subs.sink = this.userInfosService.getUserImage().subscribe(data => {
+      console.log(data);
+      for (let i = 0; i < 10; i++) {
+        this.userImages.push(data[Math.floor(Math.random() * data.length)]);
+      }
     });
   }
 
   onGetUserInfos() {
-    this.route.params.subscribe(() => {
-      this.userInfosService.getUserInfos().subscribe(data => {
-        console.log(data);
-        this.user = data;
-      });
+    this.subs.sink = this.userInfosService.getUserInfos().subscribe(data => {
+      console.log(data);
+      this.users = data;
     });
   }
 
@@ -60,5 +61,9 @@ export class ListUsersWithImageComponent implements OnInit {
     this.onGetUserImage();
 
     this.onGetUserInfos();
+  }
+
+  ngOnDestroy() {
+    this.subs.unsubscribe();
   }
 }

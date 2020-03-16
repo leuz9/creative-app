@@ -4,11 +4,11 @@
 
     <div
       cdkDropList
-      [cdkDropListData]="user"
+      [cdkDropListData]="users"
       class="list"
       (cdkDropListDropped)="drop($event)"
     >
-    <ng-container *ngFor="let info of user" >
+    <ng-container *ngFor="let info of users" >
       <div class="list-item" cdkDrag>
         <mat-card class="user-card">
           <mat-card-header>
