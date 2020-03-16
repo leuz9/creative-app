@@ -16,7 +16,19 @@
   z-index: 1;
 }
 
+.mat-toolbar.mat-accent {
+  display: flex ;
+  justify-content: space-between;
+  height: 84px;
+}
+
 .mat-drawer-container {
   background-color: #fff;
   color: #000;
+}
+
+.language-selector {
+  width: 100px;
+  color: #000;
+  font-size: 18px;
 }
