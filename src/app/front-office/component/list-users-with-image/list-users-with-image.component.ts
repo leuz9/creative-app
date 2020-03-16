@@ -1,17 +1,17 @@
-import { Component, OnInit, OnDestroy } from "@angular/core";
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import {
   CdkDragDrop,
   moveItemInArray,
   transferArrayItem
-} from "@angular/cdk/drag-drop";
-import { ActivatedRoute } from "@angular/router";
-import { UserInfosService } from "src/app/user-infos.service";
-import { SubSink } from "subsink";
+} from '@angular/cdk/drag-drop';
+import { ActivatedRoute } from '@angular/router';
+import { UserInfosService } from 'src/app/user-infos.service';
+import { SubSink } from 'subsink';
 
 @Component({
-  selector: "app-list-users-with-image",
-  templateUrl: "./list-users-with-image.component.html",
-  styleUrls: ["./list-users-with-image.component.scss"]
+  selector: 'app-list-users-with-image',
+  templateUrl: './list-users-with-image.component.html',
+  styleUrls: ['./list-users-with-image.component.scss']
 })
 export class ListUsersWithImageComponent implements OnInit, OnDestroy {
   users: any = [];

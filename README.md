@@ -1,6 +1,16 @@
 # CreativeApp by Roland Niokhor FAYE
 
+You have to run first "npm install" after clone this repo
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.23.
+
+and:
+
+@angular/flex-layout              7.0.0-beta.24
+@angular/material                 8.2.3
+@angular-devkit/schematics        8.3.25
+@ngx-translate/core && @ngx-translate/http-loader
 
 ## Development server
 
