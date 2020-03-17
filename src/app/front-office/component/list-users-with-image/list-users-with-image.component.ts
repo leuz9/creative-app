@@ -43,10 +43,10 @@ export class ListUsersWithImageComponent implements OnInit, OnDestroy {
 
   onGetUserImage() {
     this.subs.sink = this.userInfosService.getUserImage().subscribe(data => {
-      console.log(data);
       for (let i = 0; i < 10; i++) {
         this.userImages.push(data[i]);
       }
+      console.log(this.userImages);
     });
   }
 
