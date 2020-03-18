@@ -1,4 +1,4 @@
-# CreativeApp by Roland Niokhor FAYE
+# CreativeApp by Roland Niokhor FAYE and deploy on Heroku -> https://crud-project2020.herokuapp.com/
 
 You have to run first "npm install" after clone this repo
 
